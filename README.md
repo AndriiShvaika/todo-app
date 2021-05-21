@@ -20,7 +20,10 @@ You will also see any lint errors in the console.
 
 The project was made using these technologies:
 
+- HTML layout
+- Styling a page with SCSS preprocessor
+- Working with the Git version control system
+- Application of naming and file structure of the BEM methodology
 - ReactJS (useState, useReducer, useEffect)
 - React Router
 - Axios
-- classnames
