@@ -1,3 +1,5 @@
+(https://github.com/AndriiShvaika/todo-app/raw/master/src/assets/image.png)
+
 # React To Do app
 
 To run this project, you need to install required modules with command:
