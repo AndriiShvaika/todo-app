@@ -1,4 +1,4 @@
-(https://github.com/AndriiShvaika/todo-app/raw/master/src/assets/image.png)
+![Image alt](https://github.com/AndriiShvaika/todo-app/raw/master/src/assets/image.png)
 
 # React To Do app
 
