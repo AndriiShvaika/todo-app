@@ -20,6 +20,7 @@ The JSON server will work by the address [http://localhost:3001](http://localhos
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+
 The project was made using these technologies:
 
 - HTML layout
