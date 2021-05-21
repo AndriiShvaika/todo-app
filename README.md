@@ -20,7 +20,7 @@ You will also see any lint errors in the console.
 
 The project was made using these technologies:
 
--ReactJS (useState, useReducer, useEffect)
--React Router
--Axios
--classnames
+- ReactJS (useState, useReducer, useEffect)
+- React Router
+- Axios
+- classnames
