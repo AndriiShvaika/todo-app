@@ -6,11 +6,11 @@ To run this project, you need to install required modules with command:
 
 ### `yarn install`
 
-And run the actual program with this command:
+Thereafter run the actual program with this command:
 
 ### `yarn start`
 
-To run the JSON server:
+And run the JSON server:
 
 ### `yarn fake-json`
 
