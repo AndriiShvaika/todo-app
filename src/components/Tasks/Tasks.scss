@@ -16,9 +16,11 @@
     padding-bottom: 20px;
     border-bottom: 1px solid #f2f2f2;
 
-    &:hover {
-      img {
-        opacity: 0.2;
+    @include breakpoint-up(x-large) {
+      &:hover {
+        img {
+          opacity: 0.2;
+        }
       }
     }
 
@@ -27,8 +29,14 @@
       cursor: pointer;
       margin-left: 15px;
 
-      &:hover {
-        opacity: 0.8;
+      @include breakpoint-up(x-large) {
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      @include breakpoint-down(large) {
+        opacity: 0.6;
       }
     }
   }
@@ -110,14 +118,6 @@
         left: 24%;
         top: 50%;
       }
-
-      @media (max-width: 280px) {
-        position: absolute;
-        font-size: 18px;
-        max-width: 120px;
-        left: 35%;
-        top: 50%;
-      }
     }
 
     &-row {
@@ -156,6 +156,10 @@
                 opacity: 0.9;
               }
             }
+          }
+
+          @include breakpoint-down(large) {
+            background-color: darken(#f4f6f8, 2%);
           }
 
           svg {
