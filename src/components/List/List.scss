@@ -10,25 +10,42 @@
     &:hover {
       opacity: 1;
     }
+
+    @include breakpoint-down(small) {
+      span {
+        position: relative;
+        top: -1px;
+        left: 2px;
+      }
+
+      position: relative;
+      left: 2px;
+    }
   }
 
   li {
     display: flex;
     align-items: center;
     cursor: pointer;
-    padding: 10px 12px;
+    padding: 10px 14px;
     transition: background-color 0.15s ease-in-out;
 
-    &:hover #{$self}__remove-icon {
-      opacity: 0.2;
+    @include breakpoint-up(x-large) {
+      &:hover #{$self}__remove-icon {
+        opacity: 0.2;
+      }
     }
 
     #{$self}__remove-icon {
+      position: relative;
+      left: 4px;
       opacity: 0;
       transition: opacity 0.15s ease-in-out;
 
-      &:hover {
-        opacity: 0.8;
+      @include breakpoint-up(x-large) {
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
 
@@ -50,9 +67,32 @@
       border-radius: 4px;
     }
 
+    &.hide-for-desktop {
+      display: none;
+
+      @include breakpoint-down(small) {
+        display: block;
+      }
+
+      &:hover {
+        background: none;
+      }
+
+      i {
+        @include breakpoint-down(small) {
+          position: relative;
+          right: 4px;
+        }
+      }
+    }
+
     .badge {
       position: relative;
       left: 5px;
+
+      @include breakpoint-down(small) {
+        left: 2px;
+      }
     }
 
     i {

@@ -8,6 +8,8 @@ function App() {
   const [lists, setLists] = useState(null);
   const [colors, setColors] = useState(null);
   const [activeItem, setActiveItem] = useState(null);
+  const [openMenu, setOpenMenu] = useState("todo__sidebar");
+  const [fade, setFade] = useState("overlay has-fade fade-out");
   let history = useHistory();
   let location = useLocation();
 
@@ -122,7 +124,34 @@ function App() {
 
   return (
     <div className="todo">
-      <div className="todo__sidebar">
+      <div className={openMenu}>
+        <List
+          items={[
+            {
+              className: "hide-for-desktop",
+              icon: (
+                <svg
+                  className="icon-arrow"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+                </svg>
+              ),
+            },
+          ]}
+          onClickItem={() => {
+            if (openMenu === "todo__sidebar") {
+              setOpenMenu("todo__sidebar todo__sidebar--open");
+              setFade("overlay has-fade fade-in");
+            } else {
+              setOpenMenu("todo__sidebar");
+              setFade("overlay has-fade fade-out");
+            }
+          }}
+        />
         <List
           onClickItem={() => {
             history.push(`/`);
@@ -166,6 +195,7 @@ function App() {
         )}
         <AddList onAdd={onAddList} colors={colors} />
       </div>
+      <div className={fade}></div>
       <div className="todo__tasks">
         <Route exact path="/">
           {lists &&

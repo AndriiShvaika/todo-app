@@ -1,13 +1,15 @@
-// 640px, 1024px
+// 640px, 1024px, 1376px
 $breakpoints-up: (
   "medium": "40em",
   "large": "64em",
+  "x-large": "86em",
 );
 
-// 639px, 1023px
+// 639px, 1023px, 1367px(for iPad Pro)
 $breakpoints-down: (
   "small": "39.9375em",
   "medium": "63.9375em",
+  "large": "85.4375em",
 );
 
 @mixin breakpoint-up($size) {

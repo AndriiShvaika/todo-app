@@ -1,7 +1,7 @@
+@import "../../mixins";
+
 .tasks {
-  &:not(:last-of-type) {
-    margin-bottom: 40px;
-  }
+  margin-bottom: 40px;
 
   a {
     text-decoration: none;
@@ -79,6 +79,37 @@
       position: absolute;
       left: 50%;
       top: 50%;
+
+      @include breakpoint-down(medium) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+      }
+
+      @include breakpoint-down(small) {
+        position: absolute;
+        left: 30%;
+        top: 50%;
+      }
+
+      @include breakpoint-down(small) {
+        position: absolute;
+        left: 30%;
+        top: 50%;
+      }
+
+      @media (max-width: 440px) {
+        position: absolute;
+        left: 25%;
+        top: 50%;
+      }
+
+      @media (max-width: 360px) {
+        position: absolute;
+        font-size: 20px;
+        left: 24%;
+        top: 50%;
+      }
     }
 
     &-row {
@@ -94,6 +125,10 @@
         display: flex;
         opacity: 0;
         transition: opacity 0.15s ease-in-out;
+
+        @include breakpoint-down(large) {
+          opacity: 1;
+        }
 
         div {
           display: flex;

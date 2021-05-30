@@ -1,3 +1,5 @@
+@import "../../mixins";
+
 .add-list {
   &__popup {
     height: 150px;
@@ -10,6 +12,7 @@
     position: relative;
     top: -25px;
     left: 10px;
+    z-index: 10;
 
     .button {
       width: 100%;

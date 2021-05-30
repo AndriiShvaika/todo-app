@@ -23,16 +23,10 @@
     {
       "name": "Спорт",
       "colorId": 3,
-      "id": 6
+      "id": 5
     }
   ],
   "tasks": [
-    {
-      "id": 1,
-      "listId": 2,
-      "text": "Изучить JavaScript",
-      "completed": false
-    },
     {
       "id": 2,
       "listId": 2,
@@ -50,6 +44,12 @@
       "listId": 2,
       "text": "Redux (redux-observable, redux-saga)",
       "completed": false
+    },
+    {
+      "listId": 2,
+      "text": "Изучить JavaScript",
+      "completed": false,
+      "id": 5
     }
   ],
   "colors": [

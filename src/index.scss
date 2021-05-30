@@ -1,4 +1,5 @@
 @import "mixins";
+@import "animations";
 
 * {
   margin: 0;
@@ -26,8 +27,8 @@
   @include breakpoint-down(medium) {
     position: static;
     transform: none;
-    width: 99%;
-    height: 99vh;
+    width: 100%;
+    height: 100vh;
   }
 
   &__sidebar {
@@ -36,20 +37,97 @@
     height: calc(100% - 120px);
     border-right: 1px solid #f1f1f1;
     padding: 60px 20px;
+    z-index: 10;
 
-    // @include breakpoint-down(small) {
-    //   width: 40px;
-    //   padding: 60px 10px;
-    // }
+    @include breakpoint-down(large) {
+      li.active {
+        .list__remove-icon {
+          opacity: 0.8;
+          visibility: visible;
+        }
+      }
+    }
+
+    @include breakpoint-down(small) {
+      position: absolute;
+      width: 40px;
+      padding: 60px 5px;
+      margin-right: 100px;
+      transition: width 0.3s ease-in-out;
+
+      li {
+        .list__remove-icon {
+          display: none;
+        }
+      }
+
+      li.active {
+        .list__remove-icon {
+          display: block;
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      .list__add-button {
+        opacity: 0;
+        visibility: hidden;
+        transition-delay: 0.1s;
+        transition-property: visibility;
+      }
+
+      .add-list__popup {
+        display: none;
+      }
+
+      &--open {
+        display: block;
+        width: 200px;
+
+        .icon-arrow {
+          transform: rotate(-180deg);
+          background-color: #fff;
+          padding: 10px;
+          margin-left: 5px;
+          border-radius: 30px;
+          box-shadow: 1px 2px 20px #f3f3f3;
+        }
+
+        li.active {
+          .list__remove-icon {
+            opacity: 0.8;
+            visibility: visible;
+            transition-delay: 0.2s;
+            transition-property: visibility;
+          }
+        }
+
+        .list__add-button {
+          opacity: 0.8;
+          visibility: visible;
+        }
+
+        .add-list__popup {
+          display: block;
+        }
+      }
+    }
+
+    ul.list {
+      li.hide-for-mobile--open {
+        width: 200px;
+      }
+    }
   }
 
   &__tasks {
     flex: 1;
     padding: 60px;
 
-    // @include breakpoint-down(small) {
-    //   padding: 15px;
-    // }
+    @include breakpoint-down(small) {
+      padding: 15px;
+      margin-left: 50px;
+    }
 
     overflow: auto;
   }
@@ -101,5 +179,22 @@
 
   &:focus {
     border-color: #dbdbdb;
+  }
+}
+
+.icon-arrow {
+  transition: all 0.3s ease-in-out;
+}
+
+.overlay {
+  @include breakpoint-down(small) {
+    opacity: 0;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: linear-gradient(hsl(233, 26%, 24%), transparent);
+    z-index: 1;
   }
 }
