@@ -11,10 +11,20 @@
       opacity: 1;
     }
 
+    @include breakpoint-down(large) {
+      span {
+        position: relative;
+        top: 0.5px;
+      }
+
+      position: relative;
+      left: 2px;
+    }
+
     @include breakpoint-down(small) {
       span {
         position: relative;
-        top: -1px;
+        top: 0.5px;
         left: 2px;
       }
 

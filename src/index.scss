@@ -46,6 +46,10 @@
           visibility: visible;
         }
       }
+
+      .list__add-button {
+        opacity: 0.8;
+      }
     }
 
     @include breakpoint-down(small) {
@@ -90,7 +94,7 @@
           padding: 10px;
           margin-left: 5px;
           border-radius: 30px;
-          box-shadow: 1px 2px 20px #f3f3f3;
+          box-shadow: 1px 2px 15px #999999;
         }
 
         li.active {

@@ -110,6 +110,14 @@
         left: 24%;
         top: 50%;
       }
+
+      @media (max-width: 280px) {
+        position: absolute;
+        font-size: 18px;
+        max-width: 120px;
+        left: 35%;
+        top: 50%;
+      }
     }
 
     &-row {
@@ -141,10 +149,12 @@
           margin-left: 5px;
           cursor: pointer;
 
-          &:hover {
-            background-color: darken(#f4f6f8, 2%);
-            svg {
-              opacity: 0.9;
+          @include breakpoint-up(x-large) {
+            &:hover {
+              background-color: darken(#f4f6f8, 2%);
+              svg {
+                opacity: 0.9;
+              }
             }
           }
 
@@ -152,6 +162,10 @@
             width: 11px;
             height: 11px;
             opacity: 0.4;
+
+            @include breakpoint-down(large) {
+              opacity: 0.8;
+            }
           }
         }
       }
