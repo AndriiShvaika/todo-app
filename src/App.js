@@ -201,6 +201,7 @@ function App() {
           {lists &&
             lists.map((list) => (
               <Tasks
+                key={list.id}
                 list={list}
                 onAddTask={onAddTask}
                 onEditTitle={onEditListTitle}
