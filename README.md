@@ -19,10 +19,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The JSON server will work by the address [http://localhost:3001](http://localhost:3001).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-
 The project was made using these technologies:
 
 - ReactJS (useState, useReducer, useEffect)
